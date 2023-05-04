@@ -21,18 +21,25 @@ namespace WinFormsApp6_MenssageBox_
             // MessageBox.Show("Probamos botones", "Diferentes Botones", MessageBoxButtons.AbortRetryIgnore); // agregamos botones
 
 
-             DialogResult r = MessageBox.Show("Probamos botones", "Diferentes Botones", MessageBoxButtons.AbortRetryIgnore , MessageBoxIcon.Stop);
+             DialogResult r = MessageBox.Show("Probamos botones", "Diferentes Botones", MessageBoxButtons.AbortRetryIgnore , MessageBoxIcon.Error);
 
             if (r == DialogResult.Abort)
             {
-                lblMensaje.Text = "Omitir";
+                int z = 1;
+                do
+                {
+                    DialogResult g = MessageBox.Show("Probamos botones", "Diferentes Botones", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                    lblMensaje.Text = "Omitir";
+                } while (z == 1);
             }
             if (r == DialogResult.Retry)
             {
+                DialogResult f = MessageBox.Show("Probamos botones", "Diferentes Botones", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
                 lblMensaje.Text = "Reintentar";
             }
             if (r == DialogResult.Ignore)
             {
+                DialogResult j = MessageBox.Show("Probamos botones", "Diferentes Botones", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
                 lblMensaje.Text = "Ignorar";
             }
         }
